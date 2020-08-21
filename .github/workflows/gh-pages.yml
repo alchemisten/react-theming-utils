@@ -13,7 +13,7 @@ jobs:
     - name: Install dependencies and run docs generator
       run: |
         cd $GITHUB_WORKSPACE
-        git fetch --all
+        git fetch origin gh-pages:gh-pages
         git clone .git --branch gh-pages docs-gh-pages
         npm install
         npm run docs
