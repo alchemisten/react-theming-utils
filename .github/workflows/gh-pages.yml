@@ -13,6 +13,9 @@ jobs:
     - name: Install dependencies and run docs generator
       run: |
         cd $GITHUB_WORKSPACE
+        git clone .git --branch gh-pages docs-gh-pages
         npm install
         npm run docs
-        git subtree push --prefix docs-build origin gh-pages
+        mv docs-dist/* docs-gh-pages/
+        cd docs-gh-pages && git add --all && git commit -m "Publishing to gh-pages" && git push origin gh-pages
+        git push upstream gh-pages
