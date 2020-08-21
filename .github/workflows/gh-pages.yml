@@ -1,5 +1,4 @@
-name: Create Documentation for GH Pages
-
+name: Create/Merge Documentation for GH Pages
 on:
   push:
     branches: [ master ]
@@ -8,15 +7,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
 
-    - name: Install Dependencies
-      run: npm install
-
-    # Runs a set of commands using the runners shell
-    - name: Run a multi-line script
+    - name: Install dependencies and run docs generator
       run: |
         cd $GITHUB_WORKSPACE
         npm install
