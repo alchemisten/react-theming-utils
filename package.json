@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "build": "tsc",
-    "docs": "typedoc",
+    "docs": "typedoc --out docs-dist",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
     "prepare": "npm run build",
