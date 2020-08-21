@@ -1,11 +1,27 @@
 import React, { useContext, useMemo, useState } from 'react';
 
 // types
-export type ThemeMap<T> = { [id: string]: T }
 
+/**
+ * Map of available Themes
+ */
+export type ThemeMap<T> = { [id : string]: T }
+
+/**
+ * Theme context type for @see @type(React.createContext)
+ */
 export interface ThemeContextType<T> {
+    /**
+     * Map of available themes @see @type(ThemeMap)
+     */
     themes: ThemeMap<T>,
+    /**
+     * Key of currently used theme
+     */
     currentTheme: string;
+    /**
+     * Method stub for context to update currently used theme key
+     */
     setTheme: (key: string) => void
 }
 

@@ -1,8 +1,17 @@
 import React, { FC, useEffect, useMemo} from 'react';
 import { ThemeProviderProps, useCreateTheme, useTheme, ThemeContext } from "./types";
 
+/**
+ * React Functional Component Type Wrapper for ThemePrividerProps
+ */
 export type ThemeProviderType<T> = FC<ThemeProviderProps<T>>;
 
+/**
+ * # Theme Provider Component. 
+ * Any Component in its children and ancestors will have access to the theme via the hook or the consumer component
+ *
+ * @param {ThemeProviderProps<T>} props Component Properties
+ */
 export const ThemeProvider: FC<ThemeProviderProps<any>> = ({ themes, initialTheme, children }: any) => {
 
     const themeKey = useMemo(() => {
