@@ -15,7 +15,4 @@ jobs:
         cd $GITHUB_WORKSPACE
         npm install
         npm run docs
-    - name: Push to gh-pages branch
-      uses: everlytic/branch-merge@1.1.0
-      with:
-        target_branch: gh-pages
+        git subtree push --prefix docs-build origin gh-pages
