@@ -13,6 +13,8 @@ jobs:
     - name: Install dependencies and run docs generator
       run: |
         cd $GITHUB_WORKSPACE
+        git config --global user.email "autgenerated@alchemisten.ag"
+        git config --global user.name "Github Actions !"
         git fetch origin gh-pages:gh-pages
         git clone .git --branch gh-pages docs-gh-pages
         npm install
