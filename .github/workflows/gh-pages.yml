@@ -17,8 +17,8 @@ jobs:
         git clone .git --branch gh-pages docs-gh-pages
         npm install
         npm run docs
-        mv docs-dist/* docs-gh-pages/
-        cd docs-gh-pages 
+        mv docs-gh-pages/.git/ docs-dist/
+        cd docs-dist
         touch .nojekyll
         git add --all 
         git commit -m "Publishing to gh-pages" 
